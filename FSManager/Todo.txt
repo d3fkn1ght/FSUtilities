@@ -1,0 +1,44 @@
+﻿// check if in design mode so that you don't go through construction process
+// sync method that take long time to complete can break Designer
+if (DesignerProperties.GetIsInDesignMode(
+    new System.Windows.DependencyObject()))) return;
+	
+drives = new ObservableCollection<logicalDriveModel>(_repo.GetCustomerAsync.Result);
+
+Fix:
+1. Add rows and columns to main window
+2. Data template for list box
+3. Update selection so that it populates children in treeview
+4. Update listbox on right so that double-click changes treeview
+5. Double-click should also expand the whole tree of selected in treeview
+6. Expand My Computer on start
+	
+Todo:
+Phase 1 -
+1. Finish Datatemplates for overlaying images to show inaccessible/unavailable, etc
+2. Add header
+3. Refactor getdrives & getchildren (make async)
+4. Add viewmodel as user control (copy the logic for the xaml for view from window.xaml)
+5. Get icons for types from registry?
+6. Add icon for window
+
+Phase 2 -
+1. Add second window for child view and props - add tabs to window
+2. Create header for columns
+3. Allow user to pick columns
+4. Allow saving of preferences
+
+Phase 3 -
+1. Implement buttons
+2. Implement basic file menu
+3. Implement cut & paste and basic context menu (right-click)
+
+Phase 4 -
+1. Add all buttons
+2. Add all menus
+3. All all context menu items
+4. Exception handling
+5. View switching
+6. Rename application
+7. Profile resource usage
+8. Move onto next portion

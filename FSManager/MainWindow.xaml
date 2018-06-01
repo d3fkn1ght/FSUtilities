@@ -1,0 +1,21 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:FSManager"
+        xmlns:fsexp="clr-namespace:FSManager.FSExplorer"
+        x:Class="FSManager.MainWindow"
+        Title="PermMgr" Height="350" Width="525" WindowStartupLocation="CenterScreen"
+        >
+
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
+    
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type fsexp:FSViewModel}">
+            <fsexp:FSView />
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <ContentControl Content="{Binding CurrentViewModel}" />
+    </Grid>
+</Window>
